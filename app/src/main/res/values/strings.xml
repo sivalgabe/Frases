@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Frases</string>
+    <string name="tvErroSemFrases">Ainda não existem frases cadastradas</string>
+    <string name="dica_BotaoAddFrases">Botão para adicionar novas frases</string>
 </resources>
