@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/margin16"
     tools:context=".ui.incluirfrase.IncluirFraseActivity">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -23,6 +24,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/FraseTIL"
+        android:layout_marginTop="@dimen/margin8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,6 +34,7 @@
             android:id="@+id/frasesET"
             android:minLines="4"
             android:hint="@string/hint_citacao"
+            android:gravity="start|top"
             android:inputType="textCapSentences|textMultiLine"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -41,6 +44,8 @@
         android:id="@+id/btnCancelar"
         android:text="@string/tv_cancelar"
         android:layout_width="0dp"
+        android:layout_marginTop="@dimen/margin8"
+        android:layout_marginEnd="@dimen/margin4"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/FraseTIL"
@@ -50,6 +55,8 @@
         android:id="@+id/btnSalvar"
         android:text="@string/tv_salvar"
         android:layout_width="0dp"
+        android:layout_marginTop="@dimen/margin8"
+        android:layout_marginStart="@dimen/margin4"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/FraseTIL"
