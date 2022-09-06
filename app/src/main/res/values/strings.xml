@@ -2,4 +2,8 @@
     <string name="app_name">Frases</string>
     <string name="tvErroSemFrases">Ainda não existem frases cadastradas</string>
     <string name="dica_BotaoAddFrases">Botão para adicionar novas frases</string>
+    <string name="hint_autores">Autores</string>
+    <string name="hint_citacao">Citação</string>
+    <string name="tv_cancelar">Cancelar</string>
+    <string name="tv_salvar">Salvar</string>
 </resources>
