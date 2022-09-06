@@ -6,4 +6,6 @@
     <string name="hint_citacao">Citação:</string>
     <string name="tv_cancelar">Cancelar</string>
     <string name="tv_salvar">Salvar</string>
+    <string name="tvErroSemAutor">Por favor, informe o nome do Autor</string>
+    <string name="tvErrorSemFrase">Por favor, informa a citação do Autor</string>
 </resources>

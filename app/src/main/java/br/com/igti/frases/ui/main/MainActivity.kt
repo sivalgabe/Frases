@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun configFabListeners() {
         binding.fabAddNovaFrase.setOnClickListener{
-            val intent = Intent (this, IncluirFraseActivity::class.java)
+            val intent = Intent(this, IncluirFraseActivity::class.java)
             startActivity(intent)
         }
     }

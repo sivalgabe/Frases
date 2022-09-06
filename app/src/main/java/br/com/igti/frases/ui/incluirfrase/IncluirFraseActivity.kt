@@ -18,6 +18,30 @@ class IncluirFraseActivity : AppCompatActivity() {
 
     private fun configListeners() {
         configListenersBtnCancelar()
+        configListenersBtnSalvar()
+    }
+
+    private fun configListenersBtnSalvar() {
+        binding.btnSalvar.setOnClickListener{
+            salvarFrase()
+        }
+    }
+
+    private fun salvarFrase() {
+        val autor = binding.autoresFraseED.text.toString()
+        val frase = binding.frasesET.text.toString()
+
+        if(autor.isEmpty()) {
+            binding.autoresFraseTIL.error = getString(R.string.tvErroSemAutor)
+        } else {
+            binding.autoresFraseTIL.error = null
+        }
+
+        if (frase.isEmpty()) {
+            binding.FraseTIL.error = getString(R.string.tvErrorSemFrase)
+        } else {
+            binding.FraseTIL.error = null
+        }
     }
 
     private fun configListenersBtnCancelar() {
