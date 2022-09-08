@@ -7,6 +7,7 @@
     tools:context=".ui.main.MainActivity">
 
     <TextView
+        android:id="@+id/tvMensagemListaVazia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tvErroSemFrases"
@@ -22,6 +23,7 @@
         android:layout_margin="@dimen/margin16"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

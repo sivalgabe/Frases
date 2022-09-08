@@ -4,8 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import br.com.igti.frases.R
 import br.com.igti.frases.data.Frase
 import br.com.igti.frases.databinding.ActivityMainBinding
 import br.com.igti.frases.ui.incluirfrase.IncluirFraseActivity
@@ -40,13 +43,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun configObservers() {
-        configAtualizacaoLista()
+        configRecyclerView()
     }
 
-    private fun configAtualizacaoLista() {
+    private fun configRecyclerView() {
         viewModel.listaDeFrases.observe(this) { lista ->
             Log.i("JPinfo","Frase Observadaa: $lista")
+            atualizarLista(lista)
         }
+    }
+
+    private fun atualizarLista(lista: List<Frase>) {
+             if(lista.isNullOrEmpty()) {
+                binding.rvListaFrases.visibility = View.GONE
+                binding.tvMensagemListaVazia.visibility = View.VISIBLE
+                 } else {
+                binding.tvMensagemListaVazia.visibility = View.GONE
+                binding.rvListaFrases.visibility = View.VISIBLE
+                binding.rvListaFrases.adapter = FrasesAdapter(listaDeFrases = lista)
+                 }
     }
 
     private fun iniciarDados() {
@@ -63,6 +78,14 @@ class MainActivity : AppCompatActivity() {
                 retornoFrase.launch(it)
             }
         }
+
+        binding.fabAddNovaFrase.setOnLongClickListener {
+            viewModel.limparListaDeFrases()
+            Toast.makeText(this, R.string.lista_limpa_sucesso,
+                Toast.LENGTH_LONG).show()
+            it.isLongClickable
+        }
+
     }
 
     companion object {
